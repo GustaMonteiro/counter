@@ -3,6 +3,7 @@ var newCounterButton = document.querySelector('#new-counter');
 var counters = [];
 var Counter = /** @class */ (function () {
     function Counter() {
+        var _this = this;
         this.labelString = "Counter";
         this.sub = 1;
         this.add = 1;
@@ -38,6 +39,14 @@ var Counter = /** @class */ (function () {
         this.body.appendChild(this.addController);
         this.counterDiv.appendChild(this.labelSpan);
         this.counterDiv.appendChild(this.body);
+        this.subButton.addEventListener('click', function () {
+            _this.count -= _this.sub;
+            _this.updateValues();
+        });
+        this.addButton.addEventListener('click', function () {
+            _this.count += _this.sub;
+            _this.updateValues();
+        });
         this.updateValues();
     }
     Counter.prototype.updateValues = function () {

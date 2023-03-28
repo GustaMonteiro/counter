@@ -68,6 +68,16 @@ class Counter {
         this.counterDiv.appendChild(this.labelSpan);
         this.counterDiv.appendChild(this.body);
 
+        this.subButton.addEventListener('click', () => {
+            this.count -= this.sub;
+            this.updateValues();
+        })
+
+        this.addButton.addEventListener('click', () => {
+            this.count += this.sub;
+            this.updateValues();
+        })
+
         this.updateValues();
     }
 }
