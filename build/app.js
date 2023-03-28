@@ -58,7 +58,9 @@ var Counter = /** @class */ (function () {
     };
     return Counter;
 }());
-newCounterButton.addEventListener('click', function () {
+var createNewCounter = function () {
     counters.push(new Counter());
-    counterList === null || counterList === void 0 ? void 0 : counterList.appendChild(counters[counters.length - 1].counterDiv);
-});
+    counterList.appendChild(counters[counters.length - 1].counterDiv);
+};
+newCounterButton.addEventListener('click', createNewCounter);
+createNewCounter();

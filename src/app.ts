@@ -84,7 +84,11 @@ class Counter {
     }
 }
 
-newCounterButton!.addEventListener('click', () => {
+const createNewCounter = () => {
     counters.push(new Counter());
-    counterList?.appendChild(counters[counters.length - 1].counterDiv);
-})
+    counterList!.appendChild(counters[counters.length - 1].counterDiv);
+}
+
+newCounterButton!.addEventListener('click', createNewCounter);
+
+createNewCounter();
