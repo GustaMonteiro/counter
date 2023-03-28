@@ -12,11 +12,11 @@ class Counter {
     body: HTMLDivElement;
     subController: HTMLDivElement;
     subButton: HTMLButtonElement;
-    subSettingsButton: HTMLButtonElement;
+    subSettingsButton: HTMLImageElement;
     countSpan: HTMLSpanElement;
     addController: HTMLDivElement;
     addButton: HTMLButtonElement;
-    addSettingsButton: HTMLButtonElement;
+    addSettingsButton: HTMLImageElement;
 
     updateValues() {
         this.labelTextarea.innerText = this.labelString;
@@ -35,27 +35,27 @@ class Counter {
         this.body = document.createElement('div');
         this.subController = document.createElement('div');
         this.subButton = document.createElement('button');
-        this.subSettingsButton = document.createElement('button');
+        this.subSettingsButton = document.createElement('img');
         this.countSpan = document.createElement('span');
         this.addController = document.createElement('div');
         this.addButton = document.createElement('button');
-        this.addSettingsButton = document.createElement('button');
+        this.addSettingsButton = document.createElement('img');
 
         this.counterDiv.classList.add('counter');
         this.labelTextarea.classList.add('counter-label');
         this.body.classList.add('counter-body');
         this.subController.classList.add('controller');
         this.subButton.classList.add('controller-count', 'controller-sub');
-        this.subSettingsButton.classList.add('controller-settings');
+        this.subSettingsButton.classList.add('gear-icon');
         this.countSpan.classList.add('counter-display');
         this.addController.classList.add('controller');
         this.addButton.classList.add('controller-count', 'controller-add');
-        this.addSettingsButton.classList.add('controller-settings');
+        this.addSettingsButton.classList.add('gear-icon');
 
         this.labelTextarea.placeholder = "Counter"
 
-        this.subSettingsButton.innerHTML = '&#9881;';
-        this.addSettingsButton.innerHTML = '&#9881;';
+        this.subSettingsButton.src = 'icons/gear.svg';
+        this.addSettingsButton.src = 'icons/gear.svg';
 
         this.subController.appendChild(this.subButton);
         this.subController.appendChild(this.subSettingsButton);
@@ -66,7 +66,7 @@ class Counter {
         this.body.appendChild(this.subController);
         this.body.appendChild(this.countSpan);
         this.body.appendChild(this.addController);
-        
+
         this.counterDiv.appendChild(this.labelTextarea);
         this.counterDiv.appendChild(this.body);
 

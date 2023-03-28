@@ -1,5 +1,6 @@
 html {
     background-color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -17,6 +18,11 @@ h1 {
     font-weight: bold;
 }
 
+.gear-icon {
+    width: 2rem;
+    margin: 7px;
+}
+
 .counter {
     display: flex;
     margin-top: 20px;
@@ -28,7 +34,6 @@ h1 {
 .counter-body {
     display: flex;
     justify-content: space-evenly;
-
     align-items: center;
 }
 
@@ -48,6 +53,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .counter-display {
@@ -69,14 +75,6 @@ h1 {
     padding: 5px 15px;
     font-weight: bold;
     color: white;
-}
-
-.controller-settings {
-    color: white;
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: none;
-    font-size: 2rem;
 }
 
 .controller-add {
