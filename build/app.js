@@ -1,4 +1,5 @@
 var counterList = document.querySelector('#counter-list');
+var newCounterButton = document.querySelector('#new-counter');
 var counters = [];
 var Counter = /** @class */ (function () {
     function Counter() {
@@ -47,7 +48,7 @@ var Counter = /** @class */ (function () {
     };
     return Counter;
 }());
-counters.push(new Counter());
-counters.push(new Counter());
-counterList.appendChild(counters[0].counterDiv);
-counterList.appendChild(counters[1].counterDiv);
+newCounterButton.addEventListener('click', function () {
+    counters.push(new Counter());
+    counterList === null || counterList === void 0 ? void 0 : counterList.appendChild(counters[counters.length - 1].counterDiv);
+});
