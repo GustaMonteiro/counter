@@ -52,8 +52,8 @@ class Counter {
         this.addButton.classList.add('controller-count', 'controller-add');
         this.addSettingsButton.classList.add('controller-settings');
 
-        this.subSettingsButton.innerText = 'Change';
-        this.addSettingsButton.innerText = 'Change';
+        this.subSettingsButton.innerHTML = '&#9881;';
+        this.addSettingsButton.innerHTML = '&#9881;';
 
         this.subController.appendChild(this.subButton);
         this.subController.appendChild(this.subSettingsButton);
