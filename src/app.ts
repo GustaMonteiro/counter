@@ -8,7 +8,7 @@ class Counter {
     sub: number;
     add: number;
     counterDiv: HTMLDivElement;
-    labelSpan: HTMLSpanElement;
+    labelTextarea: HTMLTextAreaElement;
     body: HTMLDivElement;
     subController: HTMLDivElement;
     subButton: HTMLButtonElement;
@@ -19,19 +19,19 @@ class Counter {
     addSettingsButton: HTMLButtonElement;
 
     updateValues() {
-        this.labelSpan.innerText = this.labelString;
+        this.labelTextarea.innerText = this.labelString;
         this.subButton.innerText = `- ${this.sub}`;
         this.addButton.innerText = `+ ${this.add}`;
         this.countSpan.innerText = this.count.toString();
     }
 
     constructor() {
-        this.labelString = "Counter";
+        this.labelString = "";
         this.sub = 1;
         this.add = 1;
         this.count = 0;
         this.counterDiv = document.createElement('div');
-        this.labelSpan = document.createElement('span');
+        this.labelTextarea = document.createElement('textarea');
         this.body = document.createElement('div');
         this.subController = document.createElement('div');
         this.subButton = document.createElement('button');
@@ -42,7 +42,7 @@ class Counter {
         this.addSettingsButton = document.createElement('button');
 
         this.counterDiv.classList.add('counter');
-        this.labelSpan.classList.add('counter-label');
+        this.labelTextarea.classList.add('counter-label');
         this.body.classList.add('counter-body');
         this.subController.classList.add('controller');
         this.subButton.classList.add('controller-count', 'controller-sub');
@@ -51,6 +51,8 @@ class Counter {
         this.addController.classList.add('controller');
         this.addButton.classList.add('controller-count', 'controller-add');
         this.addSettingsButton.classList.add('controller-settings');
+
+        this.labelTextarea.placeholder = "Counter"
 
         this.subSettingsButton.innerHTML = '&#9881;';
         this.addSettingsButton.innerHTML = '&#9881;';
@@ -64,8 +66,8 @@ class Counter {
         this.body.appendChild(this.subController);
         this.body.appendChild(this.countSpan);
         this.body.appendChild(this.addController);
-
-        this.counterDiv.appendChild(this.labelSpan);
+        
+        this.counterDiv.appendChild(this.labelTextarea);
         this.counterDiv.appendChild(this.body);
 
         this.subButton.addEventListener('click', () => {
@@ -84,5 +86,5 @@ class Counter {
 
 newCounterButton!.addEventListener('click', () => {
     counters.push(new Counter());
-    counterList?.appendChild(counters[counters.length-1].counterDiv);
+    counterList?.appendChild(counters[counters.length - 1].counterDiv);
 })

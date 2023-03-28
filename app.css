@@ -1,4 +1,9 @@
+html {
+    background-color: #1a1a1a;
+}
+
 main {
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,12 +11,15 @@ main {
 }
 
 h1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
     font-size: 5rem;
     font-weight: bold;
 }
 
 .counter {
     display: flex;
+    margin-top: 20px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -24,6 +32,18 @@ h1 {
     align-items: center;
 }
 
+.counter-label {
+    resize: none;
+    color: white;
+    text-align: center;
+    background: none;
+    border: none;
+    width: 95vw;
+    max-width: 800px;
+    font-size: 1.4rem;
+    outline: none;
+}
+
 .controller {
     display: flex;
     flex-direction: column;
@@ -31,7 +51,9 @@ h1 {
 }
 
 .counter-display {
-    border: 1px solid black;
+    border: 3px solid white;
+    background-color: rgb(75, 75, 75);
+    line-height: 100px;
     height: 100px;
     width: 100px;
     margin: 20px;
@@ -45,13 +67,26 @@ h1 {
     font-size: 1.2rem;
     border-radius: 10px;
     padding: 5px 15px;
+    font-weight: bold;
+    color: white;
 }
 
 .controller-settings {
+    color: white;
     background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;      
+    background-repeat: no-repeat;
+    border: none;
     font-size: 2rem;
+}
+
+.controller-add {
+    background-color: #41af57;
+    border: 3px solid #2c8a3f;
+}
+
+.controller-sub {
+    background-color: #af4141;
+    border: 3px solid #8a2c2c;
 }
 
 #new-counter {
