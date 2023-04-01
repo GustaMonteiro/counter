@@ -54,8 +54,8 @@ class Counter {
 
         this.labelTextarea.placeholder = "Counter"
 
-        this.subSettingsButton.src = 'icons/gear.svg';
-        this.addSettingsButton.src = 'icons/gear.svg';
+        this.subSettingsButton.src = 'dist/icons/gear.svg';
+        this.addSettingsButton.src = 'dist/icons/gear.svg';
 
         this.subController.appendChild(this.subButton);
         this.subController.appendChild(this.subSettingsButton);

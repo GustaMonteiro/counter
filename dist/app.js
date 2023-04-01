@@ -1,9 +1,15 @@
-var counterList = document.querySelector('#counter-list');
-var newCounterButton = document.querySelector('#new-counter');
-var counters = [];
-var Counter = /** @class */ (function () {
-    function Counter() {
-        var _this = this;
+"use strict";
+const counterList = document.querySelector('#counter-list');
+const newCounterButton = document.querySelector('#new-counter');
+const counters = [];
+class Counter {
+    updateValues() {
+        this.labelTextarea.innerText = this.labelString;
+        this.subButton.innerText = `- ${this.sub}`;
+        this.addButton.innerText = `+ ${this.add}`;
+        this.countSpan.innerText = this.count.toString();
+    }
+    constructor() {
         this.labelString = "";
         this.sub = 1;
         this.add = 1;
@@ -29,8 +35,8 @@ var Counter = /** @class */ (function () {
         this.addButton.classList.add('controller-count', 'controller-add');
         this.addSettingsButton.classList.add('gear-icon');
         this.labelTextarea.placeholder = "Counter";
-        this.subSettingsButton.src = 'icons/gear.svg';
-        this.addSettingsButton.src = 'icons/gear.svg';
+        this.subSettingsButton.src = 'dist/icons/gear.svg';
+        this.addSettingsButton.src = 'dist/icons/gear.svg';
         this.subController.appendChild(this.subButton);
         this.subController.appendChild(this.subSettingsButton);
         this.addController.appendChild(this.addButton);
@@ -40,25 +46,18 @@ var Counter = /** @class */ (function () {
         this.body.appendChild(this.addController);
         this.counterDiv.appendChild(this.labelTextarea);
         this.counterDiv.appendChild(this.body);
-        this.subButton.addEventListener('click', function () {
-            _this.count -= _this.sub;
-            _this.updateValues();
+        this.subButton.addEventListener('click', () => {
+            this.count -= this.sub;
+            this.updateValues();
         });
-        this.addButton.addEventListener('click', function () {
-            _this.count += _this.sub;
-            _this.updateValues();
+        this.addButton.addEventListener('click', () => {
+            this.count += this.sub;
+            this.updateValues();
         });
         this.updateValues();
     }
-    Counter.prototype.updateValues = function () {
-        this.labelTextarea.innerText = this.labelString;
-        this.subButton.innerText = "- ".concat(this.sub);
-        this.addButton.innerText = "+ ".concat(this.add);
-        this.countSpan.innerText = this.count.toString();
-    };
-    return Counter;
-}());
-var createNewCounter = function () {
+}
+const createNewCounter = () => {
     counters.push(new Counter());
     counterList.appendChild(counters[counters.length - 1].counterDiv);
 };
