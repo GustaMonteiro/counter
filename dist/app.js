@@ -51,7 +51,7 @@ class Counter {
             this.updateValues();
         });
         this.addButton.addEventListener('click', () => {
-            this.count += this.sub;
+            this.count += this.add;
             this.updateValues();
         });
         this.updateValues();

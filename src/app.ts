@@ -1,5 +1,5 @@
 const counterList = document.querySelector('#counter-list');
-const newCounterButton = document.querySelector('#new-counter');
+const newCounterButton = document.querySelector('#new-counter') as HTMLButtonElement;
 const counters: Counter[] = [];
 
 class Counter {
@@ -89,6 +89,6 @@ const createNewCounter = () => {
     counterList!.appendChild(counters[counters.length - 1].counterDiv);
 }
 
-newCounterButton!.addEventListener('click', createNewCounter);
+newCounterButton.addEventListener('click', createNewCounter);
 
 createNewCounter();
